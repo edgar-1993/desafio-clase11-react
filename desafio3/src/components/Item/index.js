@@ -1,9 +1,12 @@
 import React from 'react';
 import img from '../../imagenes/imagen.jpg';
+import '../styles/Item.css'
+
+
 
 export const Item = ({ item }) => {
   return (
-<div className="card" >
+<div className="card cartas" >
 <img src={img} alt="" style={{width: "18rem"}}/>
     <div class="card-body">
     <h5 class="card-title">{item.title}</h5>
