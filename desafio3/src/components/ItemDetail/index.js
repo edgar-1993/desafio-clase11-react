@@ -2,6 +2,7 @@ import React from 'react'
 import img from '../../imagenes/imagen.jpg';
 
 export default function ItemDetail({ item }) {
+    console.log(item)
 
     return <>
      <img src={img?.img} alt=""/>
@@ -9,5 +10,4 @@ export default function ItemDetail({ item }) {
             <p>{item?.description}</p>
             <div>${item?.price}</div>
   </>;
-   
   }

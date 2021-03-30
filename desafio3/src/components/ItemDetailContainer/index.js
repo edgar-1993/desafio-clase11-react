@@ -1,6 +1,8 @@
 import React, { useState,useEffect} from 'react'
 
 import ItemDetail from '../ItemDetail/index'
+import {useParams} from "react-router-dom";
+
 
 const getItems = () => {
     return new Promise((resolve) => {
@@ -8,7 +10,7 @@ const getItems = () => {
             resolve({
                 title: "un item",
                 price: 700,
-                description: "esto es descripcion item",
+                description: "esto es la descripcion del item",
                 img: ""
 
 
@@ -20,6 +22,9 @@ const getItems = () => {
 
 export default function ItemDetailContainer() {
     const [item,setItem] = useState(null)
+
+    const {itemId} = useParams()
+
     useEffect(() => {
         getItems().then((res)=>setItem(res))
     },[])

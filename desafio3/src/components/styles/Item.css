@@ -1,7 +1,12 @@
 .cartas{
 display: flex;
+color:black!important;
+justify-content:space-around !important;
 flex-wrap: wrap;
-justify-content: space-around;}
+
+}
+
+
 
 
 
