@@ -7,4 +7,3 @@ export default function CartWidget() {
     return <i class=""><img src={img}></img></i>;
     
 }
-

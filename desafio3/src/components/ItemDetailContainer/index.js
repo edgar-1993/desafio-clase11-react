@@ -4,31 +4,28 @@ import ItemDetail from '../ItemDetail/index'
 import {useParams} from "react-router-dom";
 
 
-const getItems = () => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                title: "un item",
-                price: 700,
-                description: "esto es la descripcion del item",
-                img: ""
+import products from "../products/products";
 
-
-            })
-        }, 2000)
-
-    })
-}
 
 export default function ItemDetailContainer() {
-    const [item,setItem] = useState(null)
-
+    const [item, setItem] = useState([])
+    
     const {itemId} = useParams()
 
     useEffect(() => {
-        getItems().then((res)=>setItem(res))
-    },[])
+    const promesa = new Promise((resolve) =>
+    
+    setTimeout(() => {
 
-    return <ItemDetail item={item} />
+        resolve (products.find((product) => product.id === parseInt(itemId)));
+    }, 2000)
+    );
+    promesa.then((product) => {
+    setItem(product);
+    });
+    },);
 
-}
+
+    return <> { itemId}
+     <ItemDetail item={item} /></>/* JSX que devuelva un ItemDetail*/}
+    

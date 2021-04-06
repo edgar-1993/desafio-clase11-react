@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import {ItemCount} from "../ItemCount/ItemCount";
 import {ItemList} from "../ItemList/index";
 import {useParams} from "react-router-dom" 
-import img from '../../imagenes/imagen.jpg';
+
+import products from '../products/products'
 
 
 
@@ -11,34 +12,31 @@ export default function ItemListContainer() {
 
 const {categoryId} = useParams()
 
-  useEffect(()=>{
+/* aca se filtra por categoria sino,,me muestra todas  las catedorias*/ 
+useEffect(() => {
+  const promesa = new Promise((resolve, reject) => {
+      setTimeout(() => {
+      if (categoryId) {
+          const productsFilter = products.filter((product) => {
+              return product.category.toString() === categoryId;
+          });
+          resolve(productsFilter);
+      } else resolve(products);
+      resolve(products);
+      }, 2000);
+  });
+  promesa.then((resultado) => {
+      setItems(resultado);
+  });
+});
 
-    const prom = new Promise((resolve,reject)=>{
-      setTimeout(()=>{
-        resolve([
-          { id:1, title:"Hamburguesa 1", price:700, Url:"" },
-          { id:2, title:"Hamburguesa 2", price:800, pictureUrl:"https://"},
-          { id:3, title:"Hamburguesa 3", price:850, pictureUrl:"https://"},
-          { id:4, title:"Hamburguesa 4", price:900, pictureUrl:"https://"},
-          { id:5, title:"Hamburguesa 5", price:950, pictureUrl:"https://"},
-          { id:6, title:"Hamburguesa 6", price:1000, pictureUrl:"https://" }
-        ])
-      },3000)
-    })
+return (
 
-    prom.then((resultado)=>{
-      setItems(resultado)
-    })
-
-  })
-
-  return (
-    <div className="container ">
-      Items de la catedogia{categoryId}
-
+  <div className="container ">
+  <h1 className="text-4xl capitalize font-medium px-12 my-4">   <spam className="text-4xl capitalize text-purple-500">{categoryId}</spam></h1>
       <ItemList items={items}/>
-      <ItemCount stock="10" initial="1" />
-    </div>
-  );
+  </div>
+);
 }
+
   

@@ -3,7 +3,9 @@ import './App.css';
 import { NavBar } from './components/navbar/navbar';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/index";
-import {BrowserRouter, Switch,Route} from "react-router-dom"
+import {BrowserRouter, Switch,Route} from "react-router-dom";
+import Home from "./components/home/index";
+import imagen from "./imagenes/carro-vacio.png"
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
       <switch >
        
        <Route exact path= '/'>
-         ESTE ES EL HOME
+         <Home/>
        </Route>
        
        <Route path='/category/:categoryId'>
@@ -23,6 +25,14 @@ function App() {
         <Route path='/item/:itemId'>
         <ItemDetailContainer />
        </Route>
+
+<Route exact path='/cart'>
+  <div>
+  <img src={imagen}></img>
+  </div>
+</Route>
+
+
 
       </switch>
       

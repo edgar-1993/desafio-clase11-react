@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/itemcount.css"
 
 export function ItemCount({ stock, initial, onAdd }) {
   const [count, setCount] = useState(parseInt(initial));
@@ -16,7 +17,7 @@ export function ItemCount({ stock, initial, onAdd }) {
       <div className="m-2 p-2 d-flex flex-row justify-content-around align-items-center border-secondary border rounded">
         <button
           disabled={count <= 0}
-          className="btn btn-outline-dark"
+          className="bttn-gradient bttn-md bttn-success"
           type="button"
           onClick={removeHandle}
         >
@@ -25,7 +26,7 @@ export function ItemCount({ stock, initial, onAdd }) {
         <div>{count}</div>
         <button
           disabled={count >= stock}
-          className="btn btn-outline-dark"
+          className="bttn-gradient bttn-md bttn-success"
           type="button"
           onClick={addHandle}
         >
@@ -33,10 +34,10 @@ export function ItemCount({ stock, initial, onAdd }) {
         </button>
       </div>
       <button
-        disabled={count >= 1}
-        className="btn btn-outline-dark w-75"
+        
+        className="bttn-gradient bttn-md bttn-success"
         type="button"
-        onClick={onAdd}
+        onClick={()=>onAdd(count)}
       >
         Agregar al carrito
       </button>

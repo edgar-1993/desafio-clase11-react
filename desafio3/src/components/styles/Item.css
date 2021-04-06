@@ -1,9 +1,15 @@
 .cartas{
 display: flex;
-color:black!important;
-justify-content:space-around !important;
+color:rgb(24, 75, 4)!important;
+justify-content:center !important;
 flex-wrap: wrap;
 
+
+}
+
+.cartas img {
+    height: 220px;
+    width: 298px;
 }
 
 
