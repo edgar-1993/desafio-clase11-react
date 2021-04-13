@@ -5,10 +5,12 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/index";
 import {BrowserRouter, Switch,Route} from "react-router-dom";
 import Home from "./components/home/index";
-import imagen from "./imagenes/carro-vacio.png"
+import imagen from "./imagenes/carro-vacio.png";
+import {CartProvider} from "./components/context/CartContext";
 
 function App() {
   return (
+    <CartProvider>
     <BrowserRouter>
     <div className="App">
       <NavBar />
@@ -39,6 +41,7 @@ function App() {
       
     </div>
     </BrowserRouter>
+    </CartProvider>
   );
 }
 

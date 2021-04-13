@@ -1,9 +1,24 @@
 import React from "react";
 import img from '../../imagenes/carrito.png';
+import { CartContext } from "../context/CartContext";
+import {ItemCount} from '../ItemCount/ItemCount';
 
 
 
-export default function CartWidget() {
-    return <i class=""><img src={img}></img></i>;
-    
-}
+const CartWidget = () =>{
+
+  
+   
+    return(
+  
+      <>
+        <div className="d-flex"> 
+        <i className=""><img src={img}></img></i>
+        <span className="badge rounded-pill bg-light text-dark"></span>
+        </div>
+      </>  
+    )   
+      
+  }
+  
+  export default CartWidget;
