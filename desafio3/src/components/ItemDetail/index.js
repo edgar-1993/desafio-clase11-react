@@ -33,7 +33,7 @@ export default function ItemDetail({ item }) {
 
 <div className="">
             { count == 0 ?
-            <ItemCount stock="10" initial="1" onAdd={addHandle} />
+         ( item.title &&  <ItemCount stock="10" initial="1" onAdd={addHandle} />)
                 :
               <Link to='/cart'>  
              <button class="bttn-gradient bttn-md bttn-primary">Terminar mi compra</button>

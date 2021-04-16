@@ -27,15 +27,17 @@ export const NavBar = () => {
       <Link to={`/category/vegano`} className="nav-link" href="#">Veganos cat3</Link>
 
 
-       
-      </div>
+     <Link to={`/Cart`}>
+     <div><CartWidget /> </div>
+     </Link> 
       
-      <Link to="/cart"
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
-                  <CartWidget />
-                </Link>
+
+</div>
       
+      
+                
     </div>
+   
   </div>
 </nav>
 

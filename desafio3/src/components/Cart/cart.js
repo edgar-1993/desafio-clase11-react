@@ -10,7 +10,11 @@ export const Cart = () => {
 
 
     return (
-        <div>
+       
+       
+       <div>
+         
+        
             {
              !cart.length ?   
                <h2>No hay elementos en el carrito <Link class="bttn-gradient bttn-md bttn-primary" to='/' >Ir al home </Link> </h2>
@@ -32,4 +36,4 @@ export const Cart = () => {
 
         </div>
     )
-}
+} 

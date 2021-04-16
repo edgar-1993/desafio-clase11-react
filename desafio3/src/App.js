@@ -7,6 +7,7 @@ import {BrowserRouter, Switch,Route} from "react-router-dom";
 import Home from "./components/home/index";
 import imagen from "./imagenes/carro-vacio.png";
 import {CartProvider} from "./components/context/CartContext";
+import {Cart} from './components/Cart/cart';
 
 function App() {
   return (
@@ -28,10 +29,10 @@ function App() {
         <ItemDetailContainer />
        </Route>
 
-<Route exact path='/cart'>
-  <div>
-  <img src={imagen}></img>
-  </div>
+<Route path='/Cart'>
+  <h1>estoy en el cart</h1>
+  <Cart/>
+  
 </Route>
 
 

@@ -1,24 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import img from '../../imagenes/carrito.png';
 import { CartContext } from "../context/CartContext";
-import {ItemCount} from '../ItemCount/ItemCount';
 
 
 
-const CartWidget = () =>{
 
-const count = React.useState(0)  
+export const CartWidget = () =>{
+
+const {totalItems}  = useContext(CartContext)
    
-    return(
-  
-      <>
+    return <>
         <div className="d-flex"> 
         <i className=""><img src={img}></img></i>
-        <span className="badge rounded-pill bg-light text-dark">{count}</span>
+        <span className="badge rounded-pill bg-light text-dark">{totalItems}</span>
         </div>
       </>  
-    )   
+      
       
   }
   
   export default CartWidget;
+
+  
