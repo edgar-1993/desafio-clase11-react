@@ -4,6 +4,7 @@ import {ItemList} from "../ItemList/index";
 import {useParams} from "react-router-dom" 
 
 import products from '../products/products'
+import {getFirestore} from "../firebase/index"
 
 
 
@@ -12,23 +13,33 @@ export default function ItemListContainer() {
 
 const {categoryId} = useParams()
 
-/* aca se filtra por categoria sino,,me muestra todas  las catedorias*/ 
+  /* IMPORTANTE  aca se filtra por categoria sino,,me muestra todas  las catedorias */ 
 useEffect(() => {
-  const promesa = new Promise((resolve, reject) => {
-      setTimeout(() => {
-      if (categoryId) {
-          const productsFilter = products.filter((product) => {
-              return product.category.toString() === categoryId;
-          });
-          resolve(productsFilter);
-      } else resolve(products);
-      resolve(products);
-      }, 2000);
-  });
-  promesa.then((resultado) => {
-      setItems(resultado);
-  });
-});
+  
+  const db = getFirestore();
+  const itemsCollection = db.collection('items')
+  const filtrado = itemsCollection
+       .where('categoria','==', categoryId).limit(2)
+       const prom = filtrado.get();
+
+      //snaptshot es como pedir una imagen de los datos
+  prom.then((snaptshot) => {
+    console.log(' se consultaron los datos');
+    console.log(snaptshot);
+
+    if (snaptshot.size > 0) {
+      console.log(snaptshot.docs.map(doc => doc.data()));
+
+      console.log(snaptshot.docs.map(doc => doc.id))
+
+      
+      setItems(snaptshot.docs.map(doc => {
+        return {id:doc.id, ...doc.data()}
+      }))
+    }
+      //setItems(resultado);
+  })
+},[categoryId])
 
 return (
 

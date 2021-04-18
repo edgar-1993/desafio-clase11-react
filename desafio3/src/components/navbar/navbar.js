@@ -20,11 +20,11 @@ export const NavBar = () => {
       <div class="navbar-nav">
       <Link to='/' class="nav-link active" aria-current="page">Home </Link>
         
-      <Link to={`/category/vegetariano`} className="nav-link" href="#">Vegetarianas cat1</Link>
+      <Link to={`/category/vegetarianas`} className="nav-link" href="#">Vegetarianas cat1</Link>
         
-      <Link to={`/category/carne`} className="nav-link" href="#">Carnes cat2</Link>
+      <Link to={`/category/carnes`} className="nav-link" href="#">Carnes cat2</Link>
 
-      <Link to={`/category/vegano`} className="nav-link" href="#">Veganos cat3</Link>
+      <Link to={`/category/veganos`} className="nav-link" href="#">Veganos cat3</Link>
 
 
      <Link to={`/Cart`}>

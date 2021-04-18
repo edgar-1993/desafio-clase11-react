@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const app = firebase.initializeApp(
@@ -9,8 +9,14 @@ const app = firebase.initializeApp(
         storageBucket: "ecommerse-react.appspot.com",
         messagingSenderId: "970180699819",
         appId: "1:970180699819:web:3a76b07c2ce14f2e4479ee"
-      }
-)
+      
+      })
 
-
+      export const getFirebase = () => {
+        return app;
+    }
+    
+    export const getFirestore = () =>{
+        return firebase.firestore(app)
+    }
     
