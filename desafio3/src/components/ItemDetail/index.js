@@ -23,7 +23,7 @@ export default function ItemDetail({ item }) {
     return <>
     --{count}
     <div className="card col-sm-4 mb-5" >
-<img src={item.img} alt="" style={{width: "100%"}}/>
+<img src={item.imagen} alt="" style={{width: "100%"}}/>
     <div className="card-body">
     <h5 className="card-title">{item.title}</h5>
     <p className="card-text">${item.price}</p>

@@ -19,7 +19,7 @@ useEffect(() => {
   const db = getFirestore();
   const itemsCollection = db.collection('items')
   const filtrado = itemsCollection
-       .where('categoria','==', categoryId).limit(2)
+       .where('categoria','==', categoryId).limit(6)
        const prom = filtrado.get();
 
       //snaptshot es como pedir una imagen de los datos
@@ -37,7 +37,7 @@ useEffect(() => {
         return {id:doc.id, ...doc.data()}
       }))
     }
-      //setItems(resultado);
+      
   })
 },[categoryId])
 

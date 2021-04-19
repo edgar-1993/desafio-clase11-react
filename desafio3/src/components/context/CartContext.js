@@ -3,24 +3,24 @@ import React, {useState,useEffect} from 'react'
 export const  CartContext = React.createContext([])
 
 export const CartProvider = ({children}) => {
-    // array con items de este forma   {item:item, quantity: number}
+    // array con items de este forma ----------------  {item:item, quantity: number}
     const [cart,setCart] = useState([])
     const [totalItems,setTotalItems] = useState(0);
     const [totalPrecio,setTotalPrecio] = useState(0)
 
     useEffect(()=>{
-        let precio= cart.reduce((acumulador,itemActual)=>{
-            const p = itemActual.quantity * itemActual.item.price
-            return acumulador + p 
-        },0);
+        
+        let totItems = 0;
+        let precio = 0;
 
-        let totItems= cart.reduce((accumulador, ItemActual)=>{
-            return accumulador + ItemActual.quantity
-        },0);
-//orta manera de hacerlo
-        // for(let cartItem of cart) {
-        //     totItems += cartItem.quantity;
-        //     precio += cartItem.quantity * cartItem.item.price;
+        for(let cartItem of cart) {
+            totItems += cartItem.quantity;
+            precio += cartItem.quantity * cartItem.item.price;
+        }
+//otraa manera de hacerlo
+        //----     for(let cartItem of cart) {
+        // ----    totItems += cartItem.quantity;
+        // ----    precio += cartItem.quantity * cartItem.item.price;
         // }
 
         setTotalItems(totItems);
@@ -31,8 +31,24 @@ export const CartProvider = ({children}) => {
 
     const addItem = (newItem, newQuantity)=>{
 
+         /*   const cartLocalStorage = JSON.parse(localStorage.getItem("cart"));
+
+	const [cart, setCart] = useState(
+		cartLocalStorage && cartLocalStorage.length > 0 ? cartLocalStorage : defaultValue
+	);
+
+	cart.totalPrice =
+		cart.length > 0
+			? cart.reduce((total, cartItem) => total + cartItem.quantity * cartItem.item.price, 0)
+			: "";
+	cart.totalItems =
+		cart.length > 0
+			? cart.reduce((totalItemsCart, cartItem) => totalItemsCart + cartItem.quantity, 0)
+			: ""; 
+*/
         const prevCartItem = cart.find(e=> e.item.id === newItem.id)
 
+    
         let newCart;
         let qty;
         if (prevCartItem){
@@ -46,13 +62,13 @@ export const CartProvider = ({children}) => {
         setCart([...newCart, 
                 { item: newItem , quantity: qty  }])
         
-    } // agregar  cantidades de un ítem al carrito
+    } // ----agregar  cantidades de un ítem al carrito
 
 
     const removeItem = (itemId) =>{
         const newCart = cart.filter(e => e.item.id !== itemId)
         setCart(newCart)
-    }// Remover un item del cart por usando su id
+    }// Remover un item del cart por -----> id
     
     const clear = ()=>{
         setCart([])

@@ -10,7 +10,7 @@ export const Item = ({ item }) => {
 
 <div className="cartas">
 <div className="card col-sm-10 mb-5" >
-<img src={item.img} alt="" style={{width: "100%"}}/>
+<img src={item.imagen} alt="" style={{width: "100%"}}/>
     <div className="card-body">
     <h5 className="card-title">{item.title}</h5>
     <p className="card-text">${item.price}</p>

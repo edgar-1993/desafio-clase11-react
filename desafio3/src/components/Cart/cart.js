@@ -7,8 +7,7 @@ export const Cart = () => {
 
     const {cart,removeItem,totalItems,totalPrecio,clear} = useContext(CartContext)
 
-
-
+    
     return (
        
        
@@ -23,6 +22,7 @@ export const Cart = () => {
                 <div className="Productos" key={cartItem.item.id} >
                     <div className=""> Titulo:  {cartItem.item.title}  </div>
                     <div> cantidad: {cartItem.quantity} </div>
+                   
                     <button className="bttn-gradient bttn-md bttn-success" onClick={()=> removeItem(cartItem.item.id)}>borrar</button>
                 </div>)
 
