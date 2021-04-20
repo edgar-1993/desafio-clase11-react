@@ -28,7 +28,7 @@ export const Cart = () => {
 
                 
                 )}
-                <div>Total:{totalItems} y {totalPrecio}</div> 
+                <div>Total:{totalItems} Unidades y {totalPrecio} Pesos</div> 
                 <button className="bttn-gradient bttn-md bttn-success" onClick={clear}>Borrar todo</button>         
                 </>
             )

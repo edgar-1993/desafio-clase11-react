@@ -24,7 +24,8 @@ export default function ItemDetailContainer() {
         .then((res)=> {
             console.log('existe?', res.exists);
             if  (res.exists){
-                setItem(res.data())
+                // IMPORTANTE como item es undefined se debe traer por id como objeto
+                setItem({id:res.id, ... res.data()}) 
             }
         })
         return;

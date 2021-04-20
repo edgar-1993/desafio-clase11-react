@@ -45,7 +45,7 @@ export const CartProvider = ({children}) => {
 		cart.length > 0
 			? cart.reduce((totalItemsCart, cartItem) => totalItemsCart + cartItem.quantity, 0)
 			: ""; 
-*/
+       */
         const prevCartItem = cart.find(e=> e.item.id === newItem.id)
 
     
@@ -84,6 +84,7 @@ export const CartProvider = ({children}) => {
 
     return (
     <CartContext.Provider value={{cart,addItem,removeItem,clear,isInCart, totalItems,totalPrecio}} >
+        
         {children}
     </CartContext.Provider>
     )

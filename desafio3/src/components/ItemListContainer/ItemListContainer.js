@@ -15,11 +15,17 @@ const {categoryId} = useParams()
 
   /* IMPORTANTE  aca se filtra por categoria sino,,me muestra todas  las catedorias */ 
 useEffect(() => {
-  
+  let filtrado
   const db = getFirestore();
-  const itemsCollection = db.collection('items')
-  const filtrado = itemsCollection
-       .where('categoria','==', categoryId).limit(6)
+  //filtro por categorias
+  const itemsCollection = db.collection('items') 
+  if(categoryId){ filtrado = itemsCollection 
+    .where('categoria','==', categoryId).limit(6)
+
+  } else { filtrado = itemsCollection;
+
+  }
+   
        const prom = filtrado.get();
 
       //snaptshot es como pedir una imagen de los datos
@@ -37,7 +43,7 @@ useEffect(() => {
         return {id:doc.id, ...doc.data()}
       }))
     }
-      
+      //setItems(resultado);
   })
 },[categoryId])
 
