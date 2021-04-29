@@ -13,11 +13,12 @@ export function ItemCount({ stock, initial, onAdd }) {
   };
 
   return (
-    <div className="w-25 flex-column align-items-strech">
-      <div className="m-2 p-2 d-flex flex-row justify-content-around align-items-center border-secondary border rounded">
+    <div className="contador1">
+    <div className="w-25 flex-column align-items-strech contador2">
+      <div className="m-2 p-2 d-flex flex-row justify-content-around align-items-center border-secondary border rounded contador3">
         <button
           disabled={count <= 0}
-          className="bttn-gradient bttn-md bttn-success"
+          className="bttn-gradient bttn-md bttn-success  shadow-lg bg-white rounded"
           type="button"
           onClick={removeHandle}
         >
@@ -26,7 +27,7 @@ export function ItemCount({ stock, initial, onAdd }) {
         <div>{count}</div>
         <button
           disabled={count >= stock}
-          className="bttn-gradient bttn-md bttn-success"
+          className="bttn-gradient bttn-md bttn-success  shadow-lg bg-white rounded"
           type="button"
           onClick={addHandle}
         >
@@ -35,12 +36,13 @@ export function ItemCount({ stock, initial, onAdd }) {
       </div>
       <button
         
-        className="bttn-gradient bttn-md bttn-success"
+        className="bttn-unite bttn-md bttn-success  shadow-lg bg-white rounded"
         type="button"
         onClick={()=>onAdd(count)}
       >
         Agregar al carrito
       </button>
+    </div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, {useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
 import {ItemCount} from '../ItemCount/ItemCount'
-import '../styles/Item.css'
+import "../styles/itemDetail.css"
 import {CartContext} from "../context/CartContext";
 
 export default function ItemDetail({ item }) {
@@ -22,7 +22,8 @@ export default function ItemDetail({ item }) {
 
     return <>
     --{count}
-    <div className="card col-sm-4 mb-5" >
+    <div className="carta">
+    <div className="card col-sm-4 mb-5  shadow-lg bg-white rounded carta " >
 <img src={item.imagen} alt="" style={{width: "100%"}}/>
     <div className="card-body">
     <h5 className="card-title">{item.title}</h5>
@@ -30,16 +31,16 @@ export default function ItemDetail({ item }) {
     
  </div>
 </div>
-
+</div>
 <div className="">
             { count == 0 ?
          ( item.title &&  <ItemCount stock="10" initial="1" onAdd={addHandle} />)
                 :
               <Link to='/cart'>  
-             <button class="bttn-gradient bttn-md bttn-primary">Terminar mi compra</button>
+             <button class="bttn-unite bttn-md bttn-success ">Terminar mi compra</button>
               </Link>
             }
-            
+           
             </div>
   </>;
   }

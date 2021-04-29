@@ -91,31 +91,88 @@ export const Cart = () => {
              !cart.length ?   
                <h2>No hay elementos en el carrito <Link class="bttn-gradient bttn-md bttn-primary" to='/' >Ir al home </Link> </h2>
               :  (<>
-
-             
-             
+<table class="table table-striped table container Productos1 ">
+<thead className="">
+    <tr>
+      
+      <th className="col-5" scope="col-5">Titulo</th>
+      <th  className="col-5" scope="col-5">Cantidad</th>
+      <th  className="col-2" scope="col-5">🗑️</th>
+      
+    </tr>
+  </thead>
+  </table>        
                 {cart.map(cartItem => (
+                
                 <div className="Productos" key={cartItem.item.id} >
-                    <div className=""> Titulo:  {cartItem.item.title}  </div>
-                    <div> cantidad: {cartItem.quantity} </div>
                    
-                    <button className="bttn-gradient bttn-md bttn-success" onClick={()=> removeItem(cartItem.item.id)}>borrar</button>
+                   <table class="table table-striped table container Productos1">
+                   
+
+                   <tr>    
+                  <th className="col-5 " scope="col" >  <div className="">{cartItem.item.title}  </div></th>                                       
+                  
+                  <th className="col-5 " scope="col" > <div>{cartItem.quantity} </div></th>
+                  <th><button className=" col-10 bttn-unite bttn-md bttn-warning boton" onClick={()=> removeItem(cartItem.item.id)}>borrar</button></th>                 
+                    </tr>
+                    
+                    </table>
+                   
+                    
                 </div>)
 
-                
+
                 )}
-                <div>Total:{totalItems} Unidades y {totalPrecio} Pesos</div> 
-                <button className="bttn-gradient bttn-md bttn-danger" onClick={clear}>Borrar todo</button>
+                
+                <div  class="alert alert-dark container mb-5" role="alert"> 
+                <h1>
+                Total: {totalItems} Unidades y ${totalPrecio} Pesos
+                </h1>
+                <button className="bttn-unite bttn-md bttn-danger col-2" onClick={clear}>Borrar todo</button>
+                </div> 
+              
+                
+                
                
-            
+    
                   
                
-                <form className="" action=""  onSubmit={finalizarCompra}>
-                    <input className="formulario mb-5" type="text" value={name} onChange={(e)=>setName(e.target.value)}/>Nombre
-                    <input className="formulario mb-5" type="text" value={phone} onChange={(e)=>setPhone(e.target.value)}/>Telefono
-                    <input className="formulario mb-5" type="text" value={email} onChange={(e)=>setEmail(e.target.value)}/>Email
-                    <button type="submit"> Generar orden</button>
-                </form> 
+<div className="formulario ">                
+<form className=" input-group-text-center container mb-5 bg-dark  formulario"  onSubmit={finalizarCompra}>
+  
+  <div className="container mb-5">
+  <span className="input-group-text-center bttn-gradient bttn-md bttn-success" id="addon-wrapping">Nombre</span>
+  <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" value={name} onChange={(e)=>setName(e.target.value)}/>
+  </div>
+  
+  <div className="container mb-5  ">
+  <span className="input-group-text-center bttn-gradient bttn-md bttn-success mb-5" id="addon-wrapping">Email</span>
+  <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+  </div>
+
+   <div className="container mb-5">
+  <span className="input-group-text-center bttn-gradient bttn-md bttn-success mb-5" id="addon-wrapping">Telefono</span>
+  <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" value={phone} onChange={(e)=>setPhone(e.target.value)}/>
+  </div>
+ 
+<div className="botonesfin">
+  <div>
+<button className="bttn-unite bttn-md bttn-success mb-2" type="submit"> Generar orden</button>
+</div>
+
+ </div>
+
+ <div className="seguircomprando ">
+ <button className ="bttn-unite bttn-md bttn-primary mb-5"><Link className="seguircomprando " to='/' >Seguir Comprando </Link> </button>
+ </div>
+</form>
+
+
+
+
+
+</div>
+
 
                 </>
             )

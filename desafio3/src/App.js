@@ -30,7 +30,7 @@ function App() {
        </Route>
 
 <Route path='/Cart'>
-  <h1>estoy en el cart</h1>
+  <h1>Tu carrito</h1>
   <Cart/>
   
 </Route>

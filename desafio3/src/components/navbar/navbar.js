@@ -16,15 +16,15 @@ export const NavBar = () => {
       <span class="navbar-toggler-icon"></span>
     
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div class="navbar-nav">
-      <Link to='/' class="nav-link active" aria-current="page">Home </Link>
+      <Link to='/' className="nav-link active colorlink" aria-current="page">Home </Link>
         
-      <Link to={`/category/vegetarianas`} className="nav-link" href="#">Vegetarianas cat1</Link>
+      <Link to={`/category/vegetarianas`} className="nav-link colorlink" href="#">Vegetarianas cat1</Link>
         
-      <Link to={`/category/carnes`} className="nav-link" href="#">Carnes cat2</Link>
+      <Link to={`/category/carnes`} className="nav-link colorlink" href="#">Carnes cat2</Link>
 
-      <Link to={`/category/veganos`} className="nav-link" href="#">Veganos cat3</Link>
+      <Link to={`/category/veganos`} className="nav-link colorlink " href="#">Veganos cat3</Link>
 
 
      <Link to={`/Cart`}>
