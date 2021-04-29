@@ -88,41 +88,47 @@ export const Cart = () => {
          {idOrden? `Orden generada : Numero----> ${idOrden}`: null}
 
             {
-             !cart.length ?   
-               <h2>No hay elementos en el carrito <Link class="bttn-gradient bttn-md bttn-primary" to='/' >Ir al home </Link> </h2>
-              :  (<>
-<table class="table table-striped table container Productos1 ">
-<thead className="">
-    <tr>
-      
-      <th className="col-5" scope="col-5">Titulo</th>
-      <th  className="col-5" scope="col-5">Cantidad</th>
-      <th  className="col-2" scope="col-5">🗑️</th>
-      
-    </tr>
-  </thead>
-  </table>        
-                {cart.map(cartItem => (
+             !cart.length ? 
+               
+               <h2>No hay elementos en el carrito <Link className="" to='/' > <button className="bttn-unite bttn-md bttn-primary mb-5 seguircomprando"> Ir al home</button> </Link> </h2>
+               
+
+                        
+                                : 
+                            
+                        (<>
+                <table className="table table-striped table container Productos1 ">
+            <thead className="">
+                <tr>
                 
-                <div className="Productos" key={cartItem.item.id} >
-                   
-                   <table class="table table-striped table container Productos1">
-                   
+                <th className="col-5" scope="col-5">Titulo</th>
+                <th  className="col-5" scope="col-5">Cantidad</th>
+                <th  className="col-2" scope="col-5">🗑️</th>
+                
+                </tr>
+            </thead>
+            </table>        
+                            {cart.map(cartItem => (
+                            
+                            <div className="Productos" key={cartItem.item.id} >
+                            
+                            <table className="table table-striped table container Productos1">
+                            
 
-                   <tr>    
-                  <th className="col-5 " scope="col" >  <div className="">{cartItem.item.title}  </div></th>                                       
-                  
-                  <th className="col-5 " scope="col" > <div>{cartItem.quantity} </div></th>
-                  <th><button className=" col-10 bttn-unite bttn-md bttn-warning boton" onClick={()=> removeItem(cartItem.item.id)}>borrar</button></th>                 
-                    </tr>
-                    
-                    </table>
-                   
-                    
-                </div>)
+                            <tr>    
+                            <th className="col-5 " scope="col" >  <div className="">{cartItem.item.title}  </div></th>                                       
+                            
+                            <th className="col-5 " scope="col" > <div>{cartItem.quantity} </div></th>
+                            <th><button className=" col bttn-unite bttn-md bttn-warning boton" onClick={()=> removeItem(cartItem.item.id)}>borrar</button></th>                 
+                                </tr>
+                                
+                                </table>
+                            
+                                
+                            </div>)
 
 
-                )}
+                            )}
                 
                 <div  class="alert alert-dark container mb-5" role="alert"> 
                 <h1>
@@ -138,7 +144,7 @@ export const Cart = () => {
                   
                
 <div className="formulario ">                
-<form className=" input-group-text-center container mb-5 bg-dark  formulario"  onSubmit={finalizarCompra}>
+<form className=" input-group-text-center container mb-5 bg-secondary  formulario"  onSubmit={finalizarCompra}>
   
   <div className="container mb-5">
   <span className="input-group-text-center bttn-gradient bttn-md bttn-success" id="addon-wrapping">Nombre</span>
@@ -146,7 +152,7 @@ export const Cart = () => {
   </div>
   
   <div className="container mb-5  ">
-  <span className="input-group-text-center bttn-gradient bttn-md bttn-success mb-5" id="addon-wrapping">Email</span>
+  <span className="input-group-text-center bttn-gradient bttn-md bttn-success mb-5 " id="addon-wrapping">Email</span>
   <input type="text" className="form-control" placeholder="" aria-label="Username" aria-describedby="addon-wrapping" value={email} onChange={(e)=>setEmail(e.target.value)}/>
   </div>
 
