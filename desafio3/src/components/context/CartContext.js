@@ -31,21 +31,6 @@ export const CartProvider = ({children}) => {
 
     const addItem = (newItem, newQuantity)=>{
 
-         /*   const cartLocalStorage = JSON.parse(localStorage.getItem("cart"));
-
-	const [cart, setCart] = useState(
-		cartLocalStorage && cartLocalStorage.length > 0 ? cartLocalStorage : defaultValue
-	);
-
-	cart.totalPrice =
-		cart.length > 0
-			? cart.reduce((total, cartItem) => total + cartItem.quantity * cartItem.item.price, 0)
-			: "";
-	cart.totalItems =
-		cart.length > 0
-			? cart.reduce((totalItemsCart, cartItem) => totalItemsCart + cartItem.quantity, 0)
-			: ""; 
-       */
         const prevCartItem = cart.find(e=> e.item.id === newItem.id)
 
     

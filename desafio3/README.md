@@ -27,6 +27,8 @@ Html5, Css3 , Bootstrap, Googlefonts
 
 * Utiliza Firebase para guardar informacion de las compras realizadas por los usuarios.
 
+# Gif como funciona??
+ Ver aqui ➪ https://media.giphy.com/media/JbQYFqfRA1fULWx43K/giphy.gif
 
 #  💻 Como utilizar la app: 💻
 

@@ -11,8 +11,8 @@ const {totalItems}  = useContext(CartContext)
    
     return <>
         <div className="d-flex"> 
-        <i className=""><img src={img}></img></i>
-        <span className="badge rounded-pill bg-light text-dark">{totalItems}</span>
+         <i className=""><img src={img}></img></i>
+          <span className="badge rounded-pill bg-light text-dark">{totalItems}</span>
         </div>
       </>  
       
