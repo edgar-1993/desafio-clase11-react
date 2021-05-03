@@ -39,7 +39,7 @@ En la consola debe ejecutar los siguentes pasos:
 1) Ejecutar consola cmd
 
 2) Clonar el repositorio en el desktop ejecutando el siguiente comando:
- git clone ➪ https://github.com/edgar-1993/desafio-firebase-1-react.git
+ git clone ➪ https://github.com/edgar-1993/ecommerce-reactjs.git
  
  Mas info aqui ➪ (https://git-scm.com/book/es/v2/Fundamentos-de-Git-Obteniendo-un-repositorio-Git)
 
